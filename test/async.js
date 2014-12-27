@@ -6,7 +6,7 @@ test("rasync is async", function(t) {
 
 	var isAsync = true
 
-	rasync("fs", function(err, fs) {
+	rasync("fs", function() {
 		isAsync = false
 	})
 
