@@ -6,7 +6,7 @@ Async require for node.js
 
 Require modules asynchronously. Like AMD, but for CommonJS.
 
-# LICENSE
+## LICENSE
 Licensed under the GPLv3.
 
 See [LICENSE](LICENSE).
