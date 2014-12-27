@@ -9,4 +9,4 @@ Require modules asynchronously. Like AMD, but for CommonJS.
 # LICENSE
 Licensed under the GPLv3.
 
-See [LICENSE].
+See [LICENSE](LICENSE).
