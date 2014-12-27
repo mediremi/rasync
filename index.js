@@ -15,6 +15,7 @@ module.exports = function(dependencies, callback) {
 		}
 
 		try {
+			// FIXME: Make this async
 			cache[module] = require(module)
 
 			modules.push(cache[module])
