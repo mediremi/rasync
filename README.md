@@ -36,6 +36,8 @@ https://github.com/medimatrix/rasync.git` will do.
 4. Run `npm test`
 
 ## LICENSE
+Copyright Médi-Rémi Hashim 2014-2015
+
 Licensed under the GPLv3.
 
 See [LICENSE](LICENSE).
