@@ -5,7 +5,7 @@ test("Can require a module", function(t) {
 	t.plan(2)
 
 	rasync("fs", function(err, fs) {
-		t.assert(err === null, "no errors")
+		t.isEqual(err, null, "no errors")
 		t.assert(fs === require("fs"), "module loaded")
 	})
 })

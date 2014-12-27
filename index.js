@@ -1,8 +1,10 @@
+var async = require("async")
+
 var cache = {}
 
 module.exports = function(dependencies, callback) {
-	var err = null
 	var modules = []
+	var toLoad = []
 
 	// Allow user to provide a string if there is only one dependency
 	if (typeof dependencies === "string") {
@@ -14,18 +16,27 @@ module.exports = function(dependencies, callback) {
 			return modules.push(cache[module])
 		}
 
-		try {
-			// FIXME: Make this async
-			cache[module] = require(module)
+		toLoad.push(function(cb) {
+			try {
+				cache[module] = require(module)
+			} catch (e) {
+				return cb(e, null)
+			}
 
-			modules.push(cache[module])
-		} catch (e) {
-			err = e
-		}
+			setImmediate(function() {
+				cb(null, cache[module])
+			})
+		})
 	})
 
-	// Prepend err
-	modules.unshift(err)
+	async.parallel(toLoad, function(err, loadedModules) {
+		// Prepend err
+		modules.unshift(err || null)
 
-	callback.apply(null, modules)
+		if (loadedModules) {
+			Array.prototype.push.apply(modules, loadedModules)
+		}
+
+		callback.apply(null, modules)
+	})
 }

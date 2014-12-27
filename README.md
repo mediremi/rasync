@@ -4,8 +4,6 @@
 Async require for node.js
 ---
 
-> rasync is currently not async. d'oh :(
-
 `npm install rasync`
 
 Require modules asynchronously. Like AMD, but for CommonJS.
@@ -26,7 +24,7 @@ rasync(["fs", "http"], function(err, fs, http) {
 * `callback` => `Function`
 
 Require the dependencies passed to rasync. These dependencies will be passed to
-`callback` in the form of `callback(err, dependency1[, dependecy2])`
+`callback` in the form of `callback(err, dependency1[, dependecy2, dependencyN])`
 
 ## TEST
 1. Get rasync's source code. A simple `git clone
