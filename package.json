@@ -1,0 +1,31 @@
+{
+  "name": "rasync",
+  "version": "1.0.0",
+  "description": "Asynchronous require",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "tape": "^3.0.3",
+    "grunt": "^0.4.5",
+    "grunt-tape": "^0.0.2",
+    "grunt-contrib-jshint": "^0.7.2",
+    "grunt-contrib-watch": "^0.5.3"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:medimatrix/rasync.git"
+  },
+  "keywords": [
+    "async",
+    "require"
+  ],
+  "author": "Médi-Rémi Hashim",
+  "license": "GPL-3.0+",
+  "bugs": {
+    "url": "https://github.com/medimatrix/rasync/issues"
+  },
+  "homepage": "https://github.com/medimatrix/rasync"
+}
