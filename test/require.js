@@ -1,12 +1,23 @@
 var test = require("tape")
 var rasync = require("../")
 
-test("Can require modules", function(t) {
+test("Can require a module", function(t) {
 	t.plan(2)
 
 	rasync("fs", function(err, fs) {
 		t.assert(err === null, "no errors")
 		t.assert(fs === require("fs"), "module loaded")
+	})
+})
+
+test("Can require more than one module", function(t) {
+	t.plan(4)
+
+	rasync(["fs", "http", "http"], function(err, fs, http, http2) {
+		t.assert(fs === require("fs"))
+		t.assert(http === http2)
+		t.assert(http === require("http"))
+		t.assert(http2 === require("http"))
 	})
 })
 
