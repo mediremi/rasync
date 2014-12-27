@@ -4,6 +4,8 @@
 Async require for node.js
 ---
 
+> rasync is currently not async. d'oh :(
+
 `npm install rasync`
 
 Require modules asynchronously. Like AMD, but for CommonJS.
