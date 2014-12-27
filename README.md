@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/medimatrix/rasync.svg?branch=master)](https://travis-ci.org/medimatrix/rasync)
+
 # rasync
 Async require for node.js
 ---
